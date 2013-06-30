@@ -1,0 +1,17 @@
+
+- we read a configuration file synchronously here
+
+* Parsing a config file:
+
+	var config = JSON.parse(contents_of_file);
+	// or
+	// var config = JSON.parse(readFileSync("file_name.json"));
+
+* Getting contents from a parsed file
+
+	user_name = config.username;
+	version = config.version;
+
+* Using newline char
+	
+	console.log(".... \n ..");
