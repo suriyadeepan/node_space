@@ -1,0 +1,17 @@
+
+* module_object = require("module_name");
+
+	eg: fs, http
+
+* fs_object.readFile("file_name",function(error,data){
+
+	// data => file contents
+  });
+
+* print to console:
+
+	console.log("text goes here" + variable_name);
+
+* Comments:
+
+	//, /* .... */ 
