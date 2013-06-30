@@ -1,0 +1,17 @@
+
+* write to file synchronously:
+
+	fs.writeFileSync("file_name",contents);
+
+* write to file asynchronously:
+
+	fs.writeFile("file_name",contents,function(error){
+
+		// can indicate the end of file writing
+		//  here...
+	});
+
+* why write to file asynchronously?
+
+	- useful in logging the operations to a file
+	   asynchronously...
