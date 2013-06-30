@@ -1,0 +1,13 @@
+
+* Reading file synchronously
+
+	var contents = 	fs.readFileSync("file_name");
+
+* why read file synchronously?
+
+	- some case where config files need to be read!
+	- whole process depends on config files, so they
+	   need to be read before execution of remaining
+	    code!
+
+
