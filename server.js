@@ -1,15 +1,36 @@
 var http = require("http");
-console.log("Starting");
 
-var host = "127.0.0.2";
-var port = 1337;
+console.log("Starting!");
 
+// set host and port
+var host = "127.0.0.1";
+var port = 1786;
+
+// create a server with http.createServer() method
 var server = http.createServer(function(request,response){
-	console.log("Received request: "+ request.url);
+
+	// get url of request from client and print it!
+	console.log("Requested URL: "+request.url);
+
+	// set options for writing
+	// content type, 200 -> "no error" id
 	response.writeHead(200,{"Content-type":"text/plain"});
-	response.end("Hi Guys!");
+
+	// write a response
+	response.write("Guys! this is a response from server running @ "+host+":"+port);
+	
+	// end of response
+	response.end();
+
 });
 
+// now lets make the server listen to a port
 server.listen(port,host,function(){
-	console.log("Listening " + host + ":" + port);
+
+	console.log("Listening on "+host+":"+port);
+
 });
+
+
+	
+

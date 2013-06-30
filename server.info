@@ -1,0 +1,43 @@
+
+- need "http" module
+
+* Create a server:
+
+	var server = http.createServer(function(request,response){
+
+		});
+
+* Get request URL:
+
+	var reqUrl = request.url();
+	
+* Set response type:
+
+	response.writeHeader(200,{"Content-type":"text/plain"});
+	// 200 => no error
+	// 404 => error
+
+* Write response:
+
+	response.write(".....");
+
+* End of response:
+
+	response.end();
+
+* End with response:
+
+	response.end("Hello world!");
+
+* Making the server to listen
+
+	server.listen(port,host,function(){
+
+		// log "server is listening"...
+
+	});	
+
+
+* Host : 127.0.0.n
+
+* port : port number like 1336
