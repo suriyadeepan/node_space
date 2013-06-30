@@ -1,0 +1,12 @@
+
+* Watching a file for changes:
+
+	fs.watchFile("file_name",function(current,previous){
+
+		// whenever changes to file occur, this callback 
+		//  is executed...
+		
+		// do whatever you want here when the change to
+		//  to file occurs...
+
+	});
