@@ -15,7 +15,7 @@ var server = http.createServer(function(request,response){
 	// set options for writing
 	// content type, 200 -> "no error" id
 	response.writeHead(200,{"Content-type":"text/plain"});
-
+	
 	// write a response
 	response.write("Guys! this is a response from server running @ "+host+":"+port);
 	
