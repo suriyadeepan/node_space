@@ -1,3 +1,4 @@
+var gpio = require("pi-gpio");
 var fs = require("fs");
 
 // extract server configs from json file
@@ -35,13 +36,21 @@ app.get("/key/:text", function(req,resp){
 	resp.send(req.params.text);
 });
 
-app.get("/on/:text",function(req,resp){
+app.get("/on/:text", function(req,resp){
 
-	pin = parseInt(req.params.text);
+	pin = parseInt(req.params.text,10);
+	writeToPin(pin,1);
+	resp.end("pin " + pin +" on");
 
-}
+});
 
-	
+app.get("/off/:text",function(req,resp){
+
+	pin = parseInt(req.params.text,10);
+	writeToPin(pin,0);
+	resp.end("pin "+pin +" off");
+
+});
 
 // get an user id request from the client
 //  and deliver appropriate response
@@ -71,4 +80,13 @@ app.get("/usr/:id",function(req,resp){
 
 // making the server listen
 app.listen(port,host);
+
+function writeToPin(pinNum,status){
+	gpio.open(pinNum, "output", function(err) {       
+        gpio.write(pinNum, status, function() {            
+        gpio.close(pinNum);                       
+    });
+});
+
+}
 
