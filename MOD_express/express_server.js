@@ -5,6 +5,10 @@ var server_config = JSON.parse(fs.readFileSync("express_server_config.json"));
 var port = server_config.port;
 var host = server_config.host;
 
+// set GPIO pin
+var pin;
+
+
 var express = require("express");
 
 // create an express server
@@ -30,6 +34,14 @@ app.get("/",function(request,response){
 app.get("/key/:text", function(req,resp){
 	resp.send(req.params.text);
 });
+
+app.get("/on/:text",function(req,resp){
+
+	pin = parseInt(req.params.text);
+
+}
+
+	
 
 // get an user id request from the client
 //  and deliver appropriate response
