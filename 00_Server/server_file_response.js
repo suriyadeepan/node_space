@@ -21,7 +21,7 @@ server = http.createServer(function(request,response){
 			response.writeHeader(404,{"Content-type":"text/plain"});
 			response.end("Error! Check URL boss!");
 		}else{
-			response.writeHeader(200,{"Content-type":"text/javascript"});
+			response.writeHeader(200,{"Content-type":"text/plain"});
 			response.write(contents);
 			response.end();
 		}
