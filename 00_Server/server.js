@@ -4,7 +4,7 @@ console.log("Starting!");
 
 // set host and port
 var host = "127.0.0.1";
-var port = 1786;
+var port = 27017;
 
 // create a server with http.createServer() method
 var server = http.createServer(function(request,response){

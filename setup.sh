@@ -22,10 +22,11 @@ echo
 sudo cp -r node-v0.11.3-linux-arm-pi/* /opt/node
  
 echo 
-echo ' **** [4] Copying extracted folder to /opt/node/ ****'
+echo ' **** [4] Adding /opt/node/ to system path ****'
 echo
 sudo echo 'PATH=$PATH:/opt/node/bin' >> ~/.bashrc
 sudo echo 'export PATH' >> ~/.bashrc
+source ~/.bashrc
 
 echo
 echo ' **** [5] Installing npm (just to be sure) ****'
