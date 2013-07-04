@@ -1,0 +1,7 @@
+
+- As a rule of thumb, use CPS when you want to regain control after the requested operation
+   completes and use the event emitter pattern when an event can happen multiple times.
+
+
+- IMPORTANT: we should make our custom class inherit the EventEmitter class 
+   		before defining methods
