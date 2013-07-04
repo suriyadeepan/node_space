@@ -1,0 +1,17 @@
+* Create a new buffer
+
+	- var buff = new Buffer("some string");
+	- var buff = new Buffer(1024); // size of buffer
+
+* Casting to char
+	
+	- String.fromCharCode(var);
+	- String.fromCharCode(buf[i]);
+
+* Convert Buffer to String
+
+	- buff.toString();
+
+* Copying a buffer
+
+	- srcBuf.copy(targetBuf,srcStartIndex, srcEndIndex, targetStartIndex);
