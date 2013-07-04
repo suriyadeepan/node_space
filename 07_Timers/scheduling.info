@@ -1,0 +1,31 @@
+* process.nextTick(callback)
+
+By using process.nextTick(callback) instead of setTimeout(callback, 0), your callback runs
+ immediately after all the events in the event queue have been processed, which is much sooner (in
+  the CPU time scale) than when the JavaScript timeout queue is activated.
+
+You can defer the execution of a function until the next event loop tick like this:
+
+	process.nextTick(function() {
+
+		my_expensive_computation_function();
+
+	});
+
+* Summary:
+
+You can use setTimeout() to schedule the future execution of a function, which you can cancel
+ with clearTimeout().
+
+You can also schedule the periodic execution of a function by using
+ setInterval() and unschedule it by using clearInterval().
+
+If you block the event loop with a processor-intensive operation, your scheduled functions will be
+ delayed or never execute. You learned that you shouldn’t perform CPU-intensive operations inside
+  the event loop and that you can defer the execution of a function until the next iteration of the event
+   loop by using process.nextTick().
+
+Using I/O and setInterval() does not guarantee that there won’t be more than one pending call at
+ any given time. However, you can circumvent this potential issue by using a recursive function and
+  setTimeout().
+

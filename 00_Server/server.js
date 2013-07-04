@@ -3,7 +3,7 @@ var http = require("http");
 console.log("Starting!");
 
 // set host and port
-var host = "127.0.0.1";
+var host = "10.0.0.5";
 var port = 27017;
 
 // create a server with http.createServer() method
