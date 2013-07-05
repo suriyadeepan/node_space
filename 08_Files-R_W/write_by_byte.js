@@ -21,6 +21,12 @@ fs.open('dummy_text_file.txt','a',function(err,fd){
 
 		});// end of write
 
+		// eventually v need to close all the files we opened
+		// function signature: fs.close(fd,callback);
+		fs.close(fd,function(){
+			console.log("Closing file...");
+		});
+
 	}// end of else
 });
 
