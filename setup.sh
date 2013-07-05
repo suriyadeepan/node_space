@@ -1,48 +1,12 @@
-#!/bin/bash
 
-echo
-echo ' **** [1] Creating directory : /opt/node ****'
-echo
-#Make a new dir where you'll put the binary
-sudo mkdir /opt/node
+* Dear Fedora Users, use this Guide:
 
-echo
-echo ' **** [2] Download node-v0.11.3-linux-arm-pi.tar.gz ****'
-echo
-wget -c http://nodejs.org/dist/v0.11.3/node-v0.11.3-linux-arm-pi.tar.gz
+   http://vipankumar1987.wordpress.com/tutorials/nodejs/installing-node-js-and-npm-to-a-fedora-14-pc/
 
-echo
-echo ' **** [3] Extracting node-v0.11.3-linux-arm-pi.tar.gz ****'
-echo
-tar xvzf node-v0.11.3-linux-arm-pi.tar.gz
+   - very simple - download latest source code of node.js and npm - configure, make, make install...
 
-echo
-echo ' **** [4] Copying extracted folder to /opt/node/ ****'
-echo
-sudo cp -r node-v0.11.3-linux-arm-pi/* /opt/node
- 
-echo 
-echo ' **** [4] Adding /opt/node/ to system path ****'
-echo
-sudo echo 'PATH=$PATH:/opt/node/bin' >> ~/.bashrc
-sudo echo 'export PATH' >> ~/.bashrc
-source ~/.bashrc
+* other users:
 
-echo
-echo ' **** [5] Installing npm (just to be sure) ****'
-echo 
-sudo apt-get install npm
+   - google it! ;)
 
-echo
-echo '**** [6] Testing if node and npm are installed ****'
-echo
-echo '--- NODE ---'
-node -v
-echo
-echo '--- NPM ---'
-npm -v
-echo
-
-exit
-
-
+  
