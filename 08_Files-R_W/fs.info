@@ -1,0 +1,4 @@
+
+* Stringify:
+
+	JSON.stringify(json_type_data);
