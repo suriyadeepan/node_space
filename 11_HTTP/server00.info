@@ -1,0 +1,21 @@
+
+* http => schema,
+  127.0.0.1 => hostname,
+  1786 => port
+
+* util.inspect(Object)
+
+	return string representation of object
+
+* include header in curl
+
+	$ curl -i 127.0.0.1:1786 
+
+	i, --include
+              (HTTP) Include the HTTP-header in the output
+		 The HTTP-header includes things like server-name, date of
+              	  the document, HTTP-version and more.
+
+* closing a server
+
+	server.close();
