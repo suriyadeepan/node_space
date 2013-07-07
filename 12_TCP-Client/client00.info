@@ -1,0 +1,34 @@
+
+* Ending connection:
+
+	socket.end();
+	socket.end("some string...");
+
+* Getting user input:
+
+When a Node process starts, process.stdin is a stream prepared to accept user keyboard input.
+
+This ReadStream will emit “data” events, but only after you resume it; that stream is initialized in
+ the paused state.You can resume it by calling the resume method on the stream:
+
+	process.stdin.resume();
+
+Now you have a writable stream to the server and a readable stream from the user input. 
+ You can glue them together by using the pipe method like this:
+
+	process.stdin.pipe(conn);
+
+
+Now, every time the process.stdin stream is flushed 
+ which usually happens after the user
+  enters a new line character 
+   the data is piped to the server through the conn writable stream.
+
+* Reconnect to server:
+
+	conn.on('close', function() {
+
+		console.log('connection got closed, will try to reconnect');
+		connect();
+	});
+
