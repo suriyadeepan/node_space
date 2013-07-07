@@ -1,0 +1,7 @@
+
+* push()
+	
+	The push() method adds one or more elements to the end of an array
+	 and returns the new length.
+
+	eg: var sockets = []; sockets.push(socket);
